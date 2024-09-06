@@ -15,11 +15,12 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# env file
+#env file
 import os
 from dotenv import load_dotenv
 path_to_env_file = os.path.join(BASE_DIR, '.env')
 load_dotenv(path_to_env_file) 
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
@@ -27,10 +28,12 @@ load_dotenv(path_to_env_file)
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-zawqneb^*d_^kligxdfa%i&b(dx5vxepf)ve3=5u$hxxrzt6)t'
 
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
+
 
 # Application definition
 
@@ -52,7 +55,7 @@ INSTALLED_APPS = [
     
 ]
 
-# #paystack integration
+##paystack integration
 PAYSTACK_PUBLIC_KEY = 'pk_test_fef259dc53273c2348a226b62931b00eb6f4cb7c'
 PAYSTACK_SECRET_KEY = 'sk_test_ffac88be443941ce0f0350c7e6ee8e040c7fcc53'
 
@@ -97,6 +100,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'backend.wsgi.application'
 
+
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
@@ -106,6 +110,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -125,6 +130,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
@@ -135,6 +141,7 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
@@ -155,7 +162,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-PHONENUMBER_DEFAULT_REGION = 'GH'  # Your Prefered Country
+PHONENUMBER_DEFAULT_REGION = 'GH' # Your Prefered Country
+
+
+
+
 
 GMAIL_EMAIL = os.getenv('GMAIL_USER_EMAIL')
 GMAIL_PASSWORD = os.getenv('GMAIL_USER_PASSWORD')
